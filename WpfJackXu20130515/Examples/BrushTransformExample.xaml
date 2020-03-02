@@ -1,0 +1,239 @@
+﻿<Window x:Class="WpfJackXu20130515.Examples.BrushTransformExample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfJackXu20130515.Examples"
+        mc:Ignorable="d"
+        Title="Brush Transform" Height="500" Width="530" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <DrawingBrush x:Key="MyDrwaingBrush">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="M0, 30 L20, 25 20, 35Z" Brush="Blue"/>
+                        <GeometryDrawing Geometry="M30, 0 L25, 20 35, 20Z" Brush="Blue"/>
+                        <GeometryDrawing Geometry="M60, 30 L40, 25 40, 35Z" Brush="Blue"/>
+                        <GeometryDrawing Geometry="M30, 60 L25, 40 35, 40Z" Brush="Blue"/>
+                        <GeometryDrawing Geometry="M20, 20 L30, 20 30, 30 20, 30Z" Brush="Red"/>
+                        <GeometryDrawing Geometry="M30, 20 L40, 20 40, 30 30, 30Z" Brush="Yellow"/>
+                        <GeometryDrawing Geometry="M20, 30 L30, 30 30, 40 20, 40Z" Brush="LightGray"/>
+                        <GeometryDrawing Geometry="M30, 30 L40, 30 40, 40 30, 40Z" Brush="Black"/>
+                        <GeometryDrawing>
+                            <GeometryDrawing.Geometry>
+                                <EllipseGeometry RadiusX="30" RadiusY="30" Center="30, 30"/>
+                            </GeometryDrawing.Geometry>
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="5" Brush="Green"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+    </Window.Resources>    
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text=" No Transform" Margin="30, 5, 5, 0" Grid.Column="1" Grid.Row="0"/>
+        <TextBlock Text="Relative Transform" Margin="18, 5, 5, 0" Grid.Column="2" Grid.Row="0"/>
+        <TextBlock Text="Transform" Margin="38, 5, 5, 0" Grid.Column="3" Grid.Row="0"/>
+        <TextBlock Text="LinearGradientBrush" Margin="5, 25, 0, 5" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock Text="RagialGradientBrush" Margin="5, 25, 0, 5" Grid.Column="0" Grid.Row="2"/>
+        <TextBlock Text="ImageBrush" Margin="5, 25, 0, 5" Grid.Column="0" Grid.Row="3"/>
+        <TextBlock Text="Tiled ImageBrush" Margin="2, 25, 0, 5" Grid.Column="0" Grid.Row="4"/>
+        <TextBlock Text="Drwaing, Visual Brush" Margin="5, 25, 0, 5" Grid.Column="0" Grid.Row="5"/>
+        <TextBlock Text="Titled VisualBrush" Margin="5, 25, 0, 5" Grid.Column="0" Grid.Row="6"/>
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="1" Grid.Row="1">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 0">
+                    <GradientStop Color="Gray" Offset="0.4"/>
+                    <GradientStop Color="Yellow" Offset="0.5"/>
+                    <GradientStop Color="Gray" Offset="0.6"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="2" Grid.Row="1">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="Gray" Offset="0.4"/>
+                    <GradientStop Color="Yellow" Offset="0.5"/>
+                    <GradientStop Color="Gray" Offset="0.6"/>
+                    <LinearGradientBrush.RelativeTransform>
+                        <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
+                    </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="3" Grid.Row="1">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="Gray" Offset="0.4"/>
+                    <GradientStop Color="Yellow" Offset="0.5"/>
+                    <GradientStop Color="Gray" Offset="0.6"/>
+                    <LinearGradientBrush.Transform>
+                        <RotateTransform CenterX="60" CenterY="30" Angle="45"/>
+                    </LinearGradientBrush.Transform>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="1" Grid.Row="2">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="Gray" Offset="0.3"/>
+                    <GradientStop Color="Yellow" Offset="0.5"/>
+                    <GradientStop Color="Gray" Offset="0.7"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="2" Grid.Row="2">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="Gray" Offset="0.3"/>
+                    <GradientStop Color="Yellow" Offset="0.5"/>
+                    <GradientStop Color="Gray" Offset="0.7"/>
+                    <RadialGradientBrush.RelativeTransform>
+                        <RotateTransform CenterX="0.5"
+                                         CenterY="0.5"
+                                         Angle="45"/>
+                    </RadialGradientBrush.RelativeTransform>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="3" Grid.Row="2">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="Gray" Offset="0.3"/>
+                    <GradientStop Color="Yellow" Offset="0.5"/>
+                    <GradientStop Color="Gray" Offset="0.7"/>
+                    <RadialGradientBrush.Transform>
+                        <RotateTransform CenterX="60"
+                                         CenterY="30"
+                                         Angle="45"/>
+                    </RadialGradientBrush.Transform>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="1" Grid.Row="3">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/WpfJackXu20130515;component/Files/Flower.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="2" Grid.Row="3">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/WpfJackXu20130515;component/Files/Flower.jpg">
+                    <ImageBrush.RelativeTransform>
+                        <RotateTransform CenterX="0.5"
+                                         CenterY="0.5"
+                                         Angle="45"/>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="3" Grid.Row="3">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/WpfJackXu20130515;component/Files/Flower.jpg">
+                    <ImageBrush.Transform>
+                        <RotateTransform CenterX="60" CenterY="30" Angle="45"/>
+                    </ImageBrush.Transform>
+                </ImageBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="1" Grid.Row="4">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/WpfJackXu20130515;component/Files/Flower.jpg" TileMode="Tile" Viewport="0, 0, 0.5, 0.5"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="2" Grid.Row="4">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/WpfJackXu20130515;component/Files/Flower.jpg" TileMode="Tile" Viewport="0, 0, 0.5, 0.5">
+                    <ImageBrush.RelativeTransform>
+                        <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="3" Grid.Row="4">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/WpfJackXu20130515;component/Files/Flower.jpg" TileMode="Tile" Viewport="0, 0, 0.5, 0.5">
+                    <ImageBrush.Transform>
+                        <RotateTransform CenterX="60" CenterY="30" Angle="45"/>
+                    </ImageBrush.Transform>
+                </ImageBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle x:Name="MyDrawingRectangle" Width="120" Height="60" Margin="5" Grid.Column="1" Grid.Row="5"
+                   Fill="{StaticResource MyDrwaingBrush}"/>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="2" Grid.Row="5">
+            <Rectangle.Fill>
+                <VisualBrush Visual="{Binding ElementName=MyDrawingRectangle}">
+                    <VisualBrush.RelativeTransform>
+                        <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
+                    </VisualBrush.RelativeTransform>
+                </VisualBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="3" Grid.Row="5">
+            <Rectangle.Fill>
+                <VisualBrush Visual="{Binding ElementName=MyDrawingRectangle}">
+                    <VisualBrush.Transform>
+                        <RotateTransform CenterX="60" CenterY="30" Angle="45"/>
+                    </VisualBrush.Transform>
+                </VisualBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="1" Grid.Row="6">
+            <Rectangle.Fill>
+                <VisualBrush TileMode="Tile" Viewport="0,0,0.5,0.5" Visual="{Binding ElementName=MyDrawingRectangle}"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="2" Grid.Row="6">
+            <Rectangle.Fill>
+                <VisualBrush TileMode="Tile" Viewport="0,0,0.5,0.5" Visual="{Binding ElementName=MyDrawingRectangle}">
+                    <VisualBrush.RelativeTransform>
+                        <RotateTransform CenterX="0.5" CenterY="0.5" Angle="45"/>
+                    </VisualBrush.RelativeTransform>
+                </VisualBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="120" Height="60" Margin="5" Grid.Column="3" Grid.Row="6">
+            <Rectangle.Fill>
+                <VisualBrush TileMode="Tile" Viewport="0,0,0.5,0.5" Visual="{Binding ElementName=MyDrawingRectangle}">
+                    <VisualBrush.Transform>
+                        <RotateTransform CenterX="60" CenterY="30" Angle="45"/>
+                    </VisualBrush.Transform>
+                </VisualBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+    </Grid>
+</Window>

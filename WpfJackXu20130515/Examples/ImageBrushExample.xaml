@@ -1,0 +1,58 @@
+﻿<Window x:Class="WpfJackXu20130515.Examples.ImageBrushExample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfJackXu20130515.Examples"
+        mc:Ignorable="d"
+        Title="ImageBrushExample" Height="300" Width="300">
+    <Canvas>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Margin="5" Grid.Column="0" Grid.Row="0">
+                <TextBlock Margin="5" Text="Stretch = None"/>
+                <Button Width="135" Height="100">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/WpfJackXu20130515;component/Files/ImageFile.jpg" Stretch="None"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Margin="5" Grid.Column="1" Grid.Row="0">
+                <TextBlock Margin="5" Text="Stretch = Fill"/>
+                <Button Width="135" Height="100">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/WpfJackXu20130515;component/Files/ImageFile.jpg" Stretch="Fill"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Margin="5" Grid.Column="0" Grid.Row="1">
+                <TextBlock Margin="5" Text="Stretch = Uniform"/>
+                <Button Width="135" Height="100">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/WpfJackXu20130515;component/Files/ImageFile.jpg" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Margin="5" Grid.Column="1" Grid.Row="1">
+                <TextBlock Margin="5" Text="Stretch = UniformToFill"/>
+                <Button Width="135" Height="100">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/WpfJackXu20130515;component/Files/ImageFile.jpg" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+    </Canvas>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfJackXu20130515.Examples.ColormapBrushExample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfJackXu20130515.Examples"
+        mc:Ignorable="d"
+        Title="ColormapBrushExample" Height="500" Width="310">
+    <Canvas>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Margin="5" Grid.Row="0">
+                <TextBlock Margin="10,5,5,5" Text="Rectangles filled using ColormapBrush objects"/>
+                <Rectangle x:Name="rect1" Width="280" Height="30" Stroke="Blue" Margin="0,0,0,5"/>
+                <Rectangle x:Name="rect2" Width="280" Height="30" Stroke="Blue" Margin="0,0,0,5"/>
+                <Rectangle x:Name="rect3" Width="280" Height="30" Stroke="Blue" Margin="0,0,0,5"/>
+                <Rectangle x:Name="rect4" Width="280" Height="30" Stroke="Blue" Margin="0,0,0,5"/>
+                <Rectangle x:Name="rect5" Width="280" Height="30" Stroke="Blue" Margin="0,0,0,5"/>
+                <Rectangle x:Name="rect6" Width="280" Height="30" Stroke="Blue" Margin="0,0,0,5"/>
+                <Rectangle x:Name="rect7" Width="280" Height="30" Stroke="Blue" Margin="0,0,0,5"/>
+                <Rectangle x:Name="rect8" Width="280" Height="30" Stroke="Blue" Margin="0,0,0,10"/>
+                <TextBlock Margin="10,5,5,-5" Text="Sine and Cosine curve painted using colormap"/>
+            </StackPanel>
+            <Canvas x:Name="canvas1" Grid.Row="1"/>
+        </Grid>
+    </Canvas>
+</Window>

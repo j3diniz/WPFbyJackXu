@@ -1,0 +1,73 @@
+﻿<Window x:Class="WpfJackXu20130515.Examples.Interactive2DDrawing"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Interactive 2D Drawing" Height="400" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <ToolBarTray Grid.Row="0">
+            <ToolBar>
+                <RadioButton x:Name="rbSquare" IsChecked="True" ToolTip="Add Square">
+                    <Rectangle Width="15" Height="15" Stroke="Blue" Fill="LightBlue"/>
+                </RadioButton>
+                
+                <RadioButton x:Name="rbRectangle" IsChecked="False" ToolTip="Add Rectangle">
+                    <Rectangle Width="20" Height="12" Stroke="Blue" Fill="LightBlue"/>
+                </RadioButton>
+                
+                <RadioButton x:Name="rbCircle" IsChecked="False" ToolTip="Add Circle">
+                    <Ellipse Width="18" Height="18" Stroke="Blue" Fill="LightBlue"/>
+                </RadioButton>
+                
+                <RadioButton x:Name="rbEllipse" IsChecked="False" ToolTip="Add Ellipse">
+                    <Ellipse Width="22" Height="15" Stroke="Blue" Fill="LightBlue"/>                    
+                </RadioButton>
+                
+                <RadioButton x:Name="rbCombine" IsChecked="False" ToolTip="Combine Shape">
+                    <Path Fill="LightBlue" Stroke="Blue">
+                        <Path.Data>
+                            <CombinedGeometry>
+                                <CombinedGeometry.Geometry1>
+                                    <EllipseGeometry RadiusX="8" RadiusY="8" Center="8,8"/>
+                                </CombinedGeometry.Geometry1>
+                                <CombinedGeometry.Geometry2>
+                                    <EllipseGeometry RadiusX="8" RadiusY="8" Center="20,8"/>
+                                </CombinedGeometry.Geometry2>
+                            </CombinedGeometry>
+                        </Path.Data>
+                    </Path>
+                </RadioButton>
+                
+                <RadioButton x:Name="rbSelect" IsChecked="False" ToolTip="Select/Move">
+                    <Polygon
+                        Points="6 1, 10 1, 10 10, 14 10, 8 16, 2 10, 6 10" Fill="LightBlue" Stroke="Blue">
+                        <Polygon.RenderTransform>
+                            <RotateTransform CenterX="8" CenterY="8" Angle="225"/>
+                        </Polygon.RenderTransform>
+                    </Polygon>
+                </RadioButton>
+                
+                <RadioButton x:Name="rbDelete" IsChecked="False" ToolTip="Delete">
+                    <Grid>
+                        <Line X1="2" Y1="2" X2="14" Y2="14" Stroke="Blue"/>
+                        <Line X1="2" Y1="14" X2="14" Y2="2" Stroke="Blue"/>
+                    </Grid>
+                </RadioButton>                
+            </ToolBar>
+        </ToolBarTray>
+        <Viewbox Stretch="Uniform" Grid.Row="1">
+            <Border Margin="5" BorderBrush="Black"
+                    BorderThickness="1" Grid.Row="1"
+                    HorizontalAlignment="Left">
+                <Canvas Name="canvas1" Width="400" Height="345" ClipToBounds="True"
+                        Background="{StaticResource MyGrayGridBrush}"
+                        MouseLeftButtonDown="OnMouseLeftButtonDown"
+                        MouseLeftButtonUp="OnMouseLeftButtonUp"
+                        MouseMove="OnMouseMove"/>
+            </Border>
+        </Viewbox>
+    </Grid>
+</Window>

@@ -1,0 +1,63 @@
+﻿<Window x:Class="WpfJackXu20130515.Examples.RadialColormapBrush"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfJackXu20130515.Examples"
+        mc:Ignorable="d"
+        Title="RadialColormapBrush" Height="300" Width="450">
+    <Canvas>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Margin="2,5,2,2" Grid.Column="0" Grid.Row="0">
+                <TextBlock Text="Spring" Margin="33,0,0,0"/>
+                <Ellipse x:Name="ellipse1" Stroke="Blue" Width="90" Height="90" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Margin="2,5,2,2" Grid.Column="1" Grid.Row="0">
+                <TextBlock Text="Summer" Margin="30,0,0,0"/>
+                <Ellipse x:Name="ellipse2" Stroke="Blue" Width="90" Height="90" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Margin="2,5,2,2" Grid.Column="2" Grid.Row="0">
+                <TextBlock Text="Autumn" Margin="30,0,0,0"/>
+                <Ellipse x:Name="ellipse3" Stroke="Blue" Width="90" Height="90" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Margin="2,5,2,2" Grid.Column="3" Grid.Row="0">
+                <TextBlock Text="Winter" Margin="30,0,0,0"/>
+                <Ellipse x:Name="ellipse4" Stroke="Blue" Width="90" Height="90" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Margin="2,5,2,2" Grid.Column="0" Grid.Row="1">
+                <TextBlock Text="Jet" Margin="40,0,0,0"/>
+                <Ellipse x:Name="ellipse5" Stroke="Blue" Width="90" Height="90" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Margin="2,5,2,2" Grid.Column="1" Grid.Row="1">
+                <TextBlock Text="Gray" Margin="38,0,0,0"/>
+                <Ellipse x:Name="ellipse6" Stroke="Blue" Width="90" Height="90" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Margin="2,5,2,2" Grid.Column="2" Grid.Row="1">
+                <TextBlock Text="Hot" Margin="40,0,0,0"/>
+                <Ellipse x:Name="ellipse7" Stroke="Blue" Width="90" Height="90" Margin="5"/>
+            </StackPanel>
+
+            <StackPanel Margin="2,5,2,2" Grid.Column="3" Grid.Row="1">
+                <TextBlock Text="Cool" Margin="38,0,0,0"/>
+                <Ellipse x:Name="ellipse8" Stroke="Blue" Width="90" Height="90" Margin="5"/>
+            </StackPanel>
+        </Grid>
+    </Canvas>
+</Window>

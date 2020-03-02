@@ -1,0 +1,92 @@
+﻿<Window x:Class="WpfJackXu20130515.Examples.BitmapEffectsExample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfJackXu20130515.Examples"
+        mc:Ignorable="d"
+        Title="Bitmap Effects" Height="500" Width="400">
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Berel Effect: -->
+        <StackPanel Margin="5" Grid.Column="0" Grid.Row="0">
+            <Button Content="A Beveled Button" Width="175" Height="50" Margin="5">
+                <Button.BitmapEffect>
+                    <BevelBitmapEffect BevelWidth="50" EdgeProfile="CurvedIn" LightAngle="45" Relief="0.2" Smoothness="0.5"/>
+                </Button.BitmapEffect>
+            </Button>
+            <TextBlock Text="Bevel" FontSize="65" FontWeight="Bold" Foreground="DarkRed" FontFamily="Arial">
+                <TextBlock.BitmapEffect>
+                    <BevelBitmapEffect/>
+                </TextBlock.BitmapEffect>
+            </TextBlock>
+        </StackPanel>
+        
+        <!-- Blur Effect: -->
+        <StackPanel Margin="5" Grid.Column="1" Grid.Row="0">
+            <Button Content="A Blur Button" Width="175" Height="50" Margin="5">
+                <Button.BitmapEffect>
+                    <BlurBitmapEffect Radius="1"/>
+                </Button.BitmapEffect>
+            </Button>
+            <Button Content="A Blur Button" Width="175" Height="50" Margin="5">
+                <Button.BitmapEffect>
+                    <BlurBitmapEffect Radius="1"/>
+                </Button.BitmapEffect>
+            </Button>
+        </StackPanel>
+        
+        <!-- Glowing Effect: -->
+        <StackPanel Margin="5,20,5,5" Grid.Column="0" Grid.Row="1">
+            <Button Content="A Growing Button" Width="150" Height="30" Margin="10">
+                <Button.BitmapEffect>
+                    <OuterGlowBitmapEffect GlowColor="Gray" GlowSize="15" Noise="1"/>
+                </Button.BitmapEffect>
+            </Button>
+            <TextBlock Text="Growing" FontSize="40" FontWeight="Bold" Foreground="Yellow" Margin="5">
+                <TextBlock.BitmapEffect>
+                    <OuterGlowBitmapEffect GlowColor="Gray" GlowSize="10" Noise="0.5"/>
+                </TextBlock.BitmapEffect>
+            </TextBlock>
+        </StackPanel>
+        
+        <!-- Shadow Effect: -->
+        <StackPanel Margin="5,20,5,5" Grid.Column="1" Grid.Row="1">
+            <Button Content="A Shadow Button" Width="150" Height="30" Margin="5">
+                <Button.BitmapEffect>
+                    <DropShadowBitmapEffect ShadowDepth="10" Color="DarkRed"/>
+                </Button.BitmapEffect>
+            </Button>
+            <TextBlock Text="Shadow" Margin="3,0,3,13" FontSize="40" FontWeight="Bold" Foreground="LightCoral">
+                <TextBlock.BitmapEffect>
+                    <DropShadowBitmapEffect ShadowDepth="20" Color="Gray" Softness="0"/>
+                </TextBlock.BitmapEffect>
+            </TextBlock>
+        </StackPanel>
+        
+        <!-- Embossed Effect: -->
+        <StackPanel Margin="5,10,5,5" Grid.Column="0" Grid.Row="2">
+            <TextBlock Text="Original Image" Margin="5"/>
+            <Image Width="175" Source="/WpfJackXu20130515;component/Files/Flower.jpg" Grid.Column="1" Grid.Row="2"/>
+        </StackPanel>
+
+        <StackPanel Margin="5,10,5,5" Grid.Column="1" Grid.Row="2">
+            <TextBlock Text="Embossed Image" Margin="5"/>
+            <Image Width="175" Source="/WpfJackXu20130515;component/Files/Flower.jpg" Margin="5">
+                <Image.BitmapEffect>
+                    <EmbossBitmapEffect Relief="0.5" LightAngle="320"/>
+                </Image.BitmapEffect>
+            </Image>
+        </StackPanel>
+        
+    </Grid>
+</Window>
