@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfJackXu20130515.Examples"
         mc:Ignorable="d"
-        Title="Brush Transform" Height="500" Width="530" WindowStartupLocation="CenterScreen">
+        Title="Brush Transform" Height="500" Width="535" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <DrawingBrush x:Key="MyDrwaingBrush">
